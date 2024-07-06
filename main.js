@@ -37,6 +37,7 @@ function play(){
     chance -- ;
     chanceArea.textContent=`남은 기회:${chance}번`;
     console.log ('chance',chance);
+
     if(userVal<cnum){
             result.textContent='아니야 올려!';
        
@@ -48,12 +49,14 @@ function play(){
          gameover=true;
     }
 
-    history.push(userVal)
-    console.log(history)
+    history.push(userVal);
+    console.log(history);
 
 
 
     if(chance<1){
+        chanceArea.textContent = '[후훗... 다 틀렸으니 벌을 받아야겠지?]';
+        Result.textContent = '컷!!';
          gameover=true
     }
 
@@ -65,9 +68,14 @@ function play(){
 
 function reset(){
     userInp.value='';
-    pickrannum();   
+    pickrannum();
 
-    result.textContent='1~100까지 수 중에서 내가 가장 좋아하는 수는 뭘까?'
+    gameover=false;
+    chance=5;
+    chanceArea.textContent = `남은 기회: ${chance}번`;
+    platbutton.disabled = false;
+    history = [];
+    Result.textContent='1~100까지 수 중에서 내가 가장 좋아하는 수는 뭘까?'
 }
 
 

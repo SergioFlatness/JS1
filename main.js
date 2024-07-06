@@ -1,12 +1,4 @@
-//랜덤 번호 지정 t
-//유저가 번호를 입력한다 and go 버튼 클릭 t
-//만약 랜덤 번호를 맞추면 맞췄다고 알려주기t 
-//랜덤번호<유저번호=downt
-//랜덤번호>유저번호=upt
-//리셋을 누르면 초기화t
-//기회는 5번 t
-//범위 밖에 숫자를 입력하면 알려주고 기회는 안날린다.t
-//숫자 중복이 나오면 알려주고 기회를 안깎는다. t
+
 
 let cnum=0
 let platbutton=document.getElementById("playbutton");//document--웹페이지 그 자체 id로 선택
@@ -33,12 +25,12 @@ function play(){
     let userVal=userInp.value;
 
     if(userVal<1 || userVal>100){
-        Result.textContent="1과 100 사이 숫자를 입력하시오"
+        Result.textContent="1과 100 사이 숫자를 입력하거라";
         return;
     }
 
     if(history.includes(userVal)){
-        Result.textContent="이미 입력한 숫자 입니다. 다른 숫자를 입력하세여";
+        Result.textContent="이미 입력한 숫자잖아! 다시!";
         return;
     }
 
@@ -46,13 +38,13 @@ function play(){
     chanceArea.textContent=`남은 기회:${chance}번`;
     console.log ('chance',chance);
     if(userVal<cnum){
-            result.textContent='UP!';
+            result.textContent='아니야 올려!';
        
     }else if(userVal>cnum){
-            result.textContent='DOWN!';
+            result.textContent='아니야 내려!';
         
     }else{
-            result.textContent='Correct';
+            result.textContent='쳇...맞춰버렸군...ㅌ..통과!!';
          gameover=true;
     }
 
@@ -75,7 +67,7 @@ function reset(){
     userInp.value='';
     pickrannum();   
 
-    result.textContent='결과값이 나옴'
+    result.textContent='1~100까지 수 중에서 내가 가장 좋아하는 수는 뭘까?'
 }
 
 
